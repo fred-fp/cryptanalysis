@@ -15,11 +15,18 @@ def vigenere(text, key):
     return plaintext
 
 
-# Returns a list of all 26 possibilities of a ceasar cipher
-def caesar(text):
+# Returns a list of all 26 possibilities of plaintext for a ceasar cipher
+def decyptCaesar(text):
     alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     array = [i + ': ' + vigenere(text, i) for i in alph]
     return array
+
+# Returns a list of all 26 possibilities of ciphertext for a ceasar cipher
+def encryptCaesar(text):
+    alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    array = [i + ': ' + encode(text, i) for i in alph]
+    return array
+
 
 # Recieves a plaintext and a key, and returns an encrypted ciphertext after applying the vigenere cipher
 def encode(text, key):
